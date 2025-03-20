@@ -1,7 +1,12 @@
 import React from "react";
+import HeroSection from "./HeroSection";
 
-const page = () => {
-  return <div className="bg-red-300">page</div>;
+const Landing = () => {
+  return (
+    <div>
+      <HeroSection />
+    </div>
+  )
 };
 
-export default page;
+export default Landing;
