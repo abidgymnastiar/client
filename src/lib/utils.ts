@@ -57,10 +57,14 @@ export const withToast = async <T>(
 };
 
 export const createNewUserInDatabase = async (
-  user: any,
-  idToken: any,
+  // user: any,
+  // idToken: any,
+  // userRole: string,
+  // fetchWithBQ: any
+  user: { userId: string; username: string },
+  idToken: { payload: { email?: string } },
   userRole: string,
-  fetchWithBQ: any
+  fetchWithBQ: (options: { url: string; method: string; body: Record<string, unknown> }) => Promise<{ error?: boolean }>
 ) => {
   const createEndpoint =
     userRole?.toLowerCase() === "manager" ? "/managers" : "/tenants";
